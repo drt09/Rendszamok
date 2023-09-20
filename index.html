@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <title>Rendszámok</title>
+</head>
+<body>
+    <div id="mainDiv">
+        <div id="inputs">
+            <h2>Rendszáma:</h2>
+            <input type="text" id="rendszam">
+            <h2>Üzemanyag típusa:</h2>
+            <select name="uzemSelect" id="uzemSelect">
+                <option value="benzin" id="benzin">Benzin</option>
+                <option value="dizel" id="dizel">Dízel</option>
+                <option value="elektromos" id="elektr">Elektromos</option>
+            </select>
+            <p>
+                <label for="elsoTul">Első tulajdonos</label>
+                <input type="checkbox" id="elsoTul">
+            </p>
+            <h2>Ajtók száma:</h2>
+            <table>
+                <tr>
+                    <td>3 ajtós</td>
+                    <td>5 ajtós</td>
+                </tr>
+                <tr>
+                    <td><input type="radio" name="ajto" id="harom"></td>
+                    <td><input type="radio" name="ajto" id="ot" checked></td>
+                </tr>
+            </table>
+            <button onclick="Tarol()">Tárol</button>
+            <button onclick="Statisztika()">Statisztika</button>
+        </div>
+        <div id="statisztika"></div>
+    </div>
+</body>
+</html>
+<script src="assets/js/main.js"></script>
