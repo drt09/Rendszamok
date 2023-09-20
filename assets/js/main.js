@@ -3,11 +3,9 @@ var t = []
 function Tarol()
 {
     var obj = {
-        rendsz: document.getElementById("rendszam").value,
-        b: document.getElementById("benzin").selected,
-        d: document.getElementById("dizel").selected,
-        e: document.getElementById("elektr").selected,
-        elstul: document.getElementById("elsoTul").checked,
+        rendszam: document.getElementById("rendszam").value,
+        uzemanyag: document.getElementById("uzemselect").value,
+        elsotulajdonos: document.getElementById("elsoTul").checked,
         ajtoharom: document.getElementById("harom").checked,
         ajtoot: document.getElementById("ot").checked
     }
@@ -25,14 +23,19 @@ function Tarol()
 
 function Statisztika()
 {
-    var benzin, elektr, dizel
-    for (let i = 0; i < t.length; i++) 
-    {
-        if (t[i].b) benzin++
-        if (t[i].d) dizel++
-        if (t[i].e) elektr++
-    }
-    document.getElementById("statisztika").innerHTML += "<table><tr><td>Üzemanyag szerint</td><td>Benzin</td><td>Dízel</td><td>Elektromos</td><td></td>"
-    document.getElementById("statisztika").innerHTML += "<tr><td>"+benzin+"</td><td></td><td></td></tr>"
+    var b = 0, d = 0, e = 0, atlag = 0, regi = 0, uj = 0, ajto = 0
+    document.getElementById("statisztika").innerHTML += "<table><tr><td>"
+    document.getElementById("statisztika").innerHTML +=
+    "Üzemanyag szerint</td><td>Benzin</td><td>Dízel</td><td>Elektromos</td><td></td></tr>"
+    document.getElementById("statisztika").innerHTML += 
+    "<tr><td>"+b+"</td><td>"+d+"</td><td>"+e+"</td></tr>"
+    document.getElementById("statisztika").innerHTML += 
+    "<tr><td>Első tulajdonosok százalékos aránya</td><td>"+atlag+"</td></tr>"
+    document.getElementById("statisztika").innerHTML += 
+    "<tr><td>Rendszámok megoszlása</td><td>Régi rendszám</td><td>Új rendszám</td></tr>"
+    document.getElementById("statisztika").innerHTML += 
+    "<tr><td></td><td>"+regi+"</td><td>"+uj+"</td></tr>"
+    document.getElementById("statisztika").innerHTML +=
+    "<tr><td>Melyik népszerűbb?</td><td>"+ajto+"</td></tr>"
     document.getElementById("statisztika").innerHTML += "</table>"
 }
